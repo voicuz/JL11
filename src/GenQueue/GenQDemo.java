@@ -133,14 +133,13 @@ class GenQDemo {
 
  */
 
-        // Demonstrate dynamic queue.
-//        String[] sStore = new String[10];
+        // Demonstrate dynamic queue with Integer.
         GenDynQueue<Integer> q4 = new GenDynQueue<>(iStore);
 
         System.out.println("Demonstrate dynamic queue of Integers.");
 
         try {
-            System.out.println("Adding to q4:");
+            System.out.println("Adding to queue:");
             for(int i=0; i < 15; i++) {
                 System.out.print(i + " ");
                 q4.put(i);  // Add integer value to q4.
@@ -151,7 +150,7 @@ class GenQDemo {
         System.out.println();
 
         try {
-            System.out.println("Getting next Integer from q4: ");
+            System.out.println("Getting next Integer from queue: ");
             for(int i=0; i < 15; i++) {
                 iVal = q4.get();
                 System.out.print(iVal + " ");
@@ -162,14 +161,16 @@ class GenQDemo {
         System.out.println();
 
 
+        // Demonstrate dynamic queue with Character
         Character[] cStore = new Character[10];
         Character cVal;
         GenDynQueue<Character> q5 = new GenDynQueue<>(cStore);
 
-        System.out.println("Demonstrate dynamic queue of Integers.");
+        System.out.println();
+        System.out.println("Demonstrate dynamic queue of Characters.");
 
         try {
-            System.out.println("Adding to q4:");
+            System.out.println("Adding to queue:");
             for(int i=0; i < 15; i++) {
                 cVal = (char) ('A' + i);
                 System.out.print(cVal + " ");
@@ -181,7 +182,7 @@ class GenQDemo {
         System.out.println();
 
         try {
-            System.out.println("Getting next Integer from q4: ");
+            System.out.println("Getting next Character from queue: ");
             for(int i=0; i < 15; i++) {
                 cVal = q5.get();
                 System.out.print(cVal + " ");
@@ -191,6 +192,36 @@ class GenQDemo {
         }
         System.out.println();
 
+
+        // Demonstrate dynamic queue with String.
+        String[] sStore = new String[5];
+        String sVal;
+        var q6 = new GenDynQueue<String>(sStore);
+
+        System.out.println();
+        System.out.println("Demonstrate dynamic queue of Strings.");
+
+        try {
+            System.out.println("Adding to queue:");
+            for(int i=0; i < 20; i++) {
+                sVal = ("A" + i);
+                System.out.print(sVal + " ");
+                q6.put(sVal);  // Add integer value to q4.
+            }
+        } catch (QueueFullException exc) {
+            System.out.println(exc);
+        }
+        System.out.println();
+
+        try {
+            System.out.println("Getting next String from queue: ");
+            for(int i=0; i < 20; i++) {
+                sVal = q6.get();
+                System.out.print(sVal + " ");
+            }
+        } catch (QueueEmptyException exc) {
+            System.out.println(exc);
+        }
 
     }
 }

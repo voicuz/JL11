@@ -4,7 +4,6 @@ package GenQueue;
 class GenDynQueue<T> implements IGenQ<T> {
     private T[] q;
     private int putloc, getloc;
-    private String str;
 
     // Construct an empty queue with the given array.
     GenDynQueue(T[] aRef) {
@@ -17,15 +16,12 @@ class GenDynQueue<T> implements IGenQ<T> {
         throws QueueFullException {
         if (putloc == q.length) {
             // increase queue size
-//            String[] s = new String[q.length * 2];
-            GenDynQueue[] t = new GenDynQueue[q.length*2];
+            var t = new Object[q.length *2];
 
             //copy elements into new queue.
             for(int i=0; i < q.length; i++) {
-//                t[i] = q[i];
-
+                t[i] = q[i];
             }
-
             q = (T[]) t;
         }
 
@@ -37,9 +33,6 @@ class GenDynQueue<T> implements IGenQ<T> {
         throws QueueEmptyException {
         if (getloc == putloc)
             throw new QueueEmptyException();
-
-//        q = Character.pars(t[getloc]);
-//        T t = q[getloc++];
 
         return q[getloc++];
     }
