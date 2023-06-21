@@ -34,6 +34,7 @@ class GenArrays {
 
         gens[0] = iOb;
         gens[1] = ob2;
+        gens[2] = new GenA<>(2.2, n);
 
         System.out.println();
     }

@@ -49,3 +49,4 @@ class Quadratic {
         out.println("Second solution: " + x);
     }
 }
+
