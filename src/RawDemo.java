@@ -47,6 +47,7 @@ class RawDemo {
         // This assignment also overrides type safety.
         raw = iOb;  // OK, but potentially wrong.
         System.out.println(raw);
+//        d = (Double) raw.getOb();
         d = (Integer) raw.getOb();
         System.out.println(d);
     }
