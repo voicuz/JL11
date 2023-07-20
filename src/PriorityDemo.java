@@ -44,6 +44,8 @@ class PriorityDemo {
         mt2.thrd.setPriority(Thread.NORM_PRIORITY-2);
         // Leave mt3, mt4 and mt5 at the default, normal priority leve.
 
+        mt1.count = 3;
+
         // start the threads
         mt1.thrd.start();
         mt2.thrd.start();
